@@ -4,7 +4,7 @@
 
 | 🌐 Онлайн | 💾 Офлайн (скачать) |
 | :--- | :--- |
-| 🚀 **[Запустить в браузере](https://kiberzefirka.github.io/rosaviatest-custom/)** | 📥 **[Скачать файл тренажёра (.html)](https://github.com/KiberZefirka/rosaviatest-custom/releases/latest/download/index.html)** |
+| 🚀 **[Запустить в браузере](https://kiberzefirka.github.io/rosaviatest-custom/)** | 📥 **[Скачать файл тренажёра (.html)](https://github.com/KiberZefirka/rosaviatest-custom/releases/latest/download/rosaviatest-cat17.html)** |
 
 > 💡 **Как пользоваться офлайн:** скачайте файл по кнопке выше и просто откройте его на компьютере или телефоне. Он работает абсолютно автономно без интернета. Все релизы и версии также доступны в разделе **[Releases](https://github.com/KiberZefirka/rosaviatest-custom/releases)**.
 
