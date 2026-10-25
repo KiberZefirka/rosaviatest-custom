@@ -579,6 +579,7 @@
             <li>Количество вопросов: <b>41</b></li>
             <li>Время тестирования: <b>40 минут</b></li>
             <li>Проходной балл: <b>75% (не менее 31 правильного ответа)</b></li>
+            <li>Порядок вариантов ответа: <b>строго официальный (А, Б, В) как на экзамене</b></li>
             <li>Результат и ошибки отображаются <b>только после завершения</b> всего теста</li>
           </ul>
           <div style="margin-top: 14px; padding: 10px 14px; background: var(--primary-light); border-radius: 8px; font-size: 13px; line-height: 1.45; border-left: 3px solid var(--primary);">
@@ -590,10 +591,6 @@
           <label class="checkbox-label">
             <input type="checkbox" id="examTimerCheckbox" checked>
             <span>Ограничить время (40 минут)</span>
-          </label>
-          <label class="checkbox-label">
-            <input type="checkbox" id="examShuffleAnswers">
-            <span>Перемешивать варианты ответов (по умолчанию исходный порядок сайта)</span>
           </label>
         </div>
 
@@ -671,9 +668,9 @@
               <input type="checkbox" id="topicShuffleQuestions" checked>
               <span>Перемешивать вопросы</span>
             </label>
-            <label class="checkbox-label">
+            <label class="checkbox-label" title="На официальном экзамене порядок вариантов фиксирован (А, Б, В). Перемешивание не рекомендуется, чтобы не ломать зрительную память и вопросы с идентичными вариантами.">
               <input type="checkbox" id="topicShuffleAnswers">
-              <span>Перемешивать варианты ответов</span>
+              <span>Перемешивать варианты ответов <span style="display: inline-block; font-size: 11px; padding: 1px 6px; border-radius: 4px; background: rgba(239, 68, 68, 0.15); color: #ef4444; font-weight: 600; margin-left: 4px;">(не рекомендуется)</span></span>
             </label>
             <label class="checkbox-label">
               <input type="checkbox" id="topicShowHint" checked>
@@ -2397,7 +2394,6 @@
     // Official Exam Start
     function startOfficialExam() {
       const withTimer = document.getElementById('examTimerCheckbox').checked;
-      const shuffleAnswers = document.getElementById('examShuffleAnswers').checked;
 
       // Select 41 questions proportionally or randomly from entire DB
       const shuffled = shuffleArray([...DB.questions]);
@@ -2409,7 +2405,7 @@
         sourceId: 'official',
         title: `Генеральный экзамен (41 вопрос)`,
         questions: selected,
-        shuffleAnswers: shuffleAnswers,
+        shuffleAnswers: false, // Strict official order as on Rosaviatsiya certification
         showHint: false,
         allowImmediate: false,
         timeLimit: withTimer,
